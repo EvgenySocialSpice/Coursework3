@@ -75,7 +75,7 @@ class TestPostsDao:
         ("Вышел", {2}),
         ("на", {1, 2, 3})
     ])
-    def test_search_in_content_results(self, post_dao, s, expected_pks):
+    def test_search_in_content_results(self, post_dao, s, pks):
         posts = post_dao.search_in_content(s)
-        pks = set([post.pk for post in posts])
-        assert pks == expected_pks, f"Incorrect result was searching for {s}"
+        post_pks = set([post.pk for post in posts])
+        assert post_pks == pks, f"Incorrect result was searching for {s}"

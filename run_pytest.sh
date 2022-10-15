@@ -1,1 +1,2 @@
-pytest -k
+pytest
+
